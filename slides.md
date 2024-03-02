@@ -3,7 +3,7 @@ title:  'PhD Defense'
 subtitle: 'Software Defect Localization Using Explainable Deep Learning'
 author: 
     - 'Tom Ganz'
-theme: 'tuberlin'
+theme: 'tub'
 center: 'false'
 slideNumber: 'true'
 bibliography: 'literature.bib'
