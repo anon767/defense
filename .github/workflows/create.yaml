@@ -3,7 +3,7 @@ name: Build HTML
 on: push
 
 jobs:
-  convert_via_pandoc:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,7 +16,7 @@ jobs:
           path: result.html
     # Deploy job
   deploy:
-
+    needs: build
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write      # to deploy to Pages
