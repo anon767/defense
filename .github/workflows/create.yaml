@@ -12,7 +12,7 @@ jobs:
           args: -t revealjs --standalone --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=index.html slides.md
       - uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: page
           path: .
 
   deploy:
@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@master
       with:
-        name: github-pages
+        name: page
         path: .
     - uses: actions/configure-pages@v1
     - uses: actions/upload-pages-artifact@v3
