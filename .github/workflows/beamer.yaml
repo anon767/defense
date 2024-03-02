@@ -13,6 +13,8 @@ jobs:
         uses: docker://pandoc/latex:2.9
         with:
           args: --filter pandoc-citeproc --to=beamer --include-in-header=templates/beamer.tex --standalone --output=presentation.tex slides.md
+        env:
+          TEXINPUTS: "./templates//:"
 
       - name: Compile PDF with LaTeX Docker
         uses: docker://texlive/texlive:latest
