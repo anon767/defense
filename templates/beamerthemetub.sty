@@ -52,11 +52,36 @@
 \setbeamercolor{itemize item}{fg=TUred}
 \setbeamertemplate{itemize item}[triangle]
 
-% Apply outer and inner themes if they are defined
-% Note: Replace 'TUBlayout' with actual theme names if available.
-% If 'TUBlayout' is a custom layout you've created, ensure its definitions
-% are included in this file or separately imported.
-%\useoutertheme{TUBlayout}
-%\useinnertheme{TUBlayout}
+% Head/foot color settings
+\setbeamercolor{section in head/foot}{fg=TUred,bg=white}
+\setbeamercolor{subsection in head/foot}{fg=TUred,bg=white}
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+
+
+% Custom title page
+\defbeamertemplate*{title page}{customized}[1][]{
+    % Customized title page definition
+    % Implementation depends on aspect ratio checks below
+}
+
+
+% Aspect ratio specific customizations
+\AtBeginDocument{
+    % 16:10
+    \ifdim\beamer@paperwidth=16.00cm\relax%
+        \ifdim\beamer@paperheight=10.00cm\relax%
+            % Customizations for 16:10 aspect ratio
+        \fi
+    \fi
+    % 16:9
+    \ifdim\beamer@paperheight=9.00cm\relax%
+        % Customizations for 16:9 aspect ratio
+    \fi
+    % 4:3
+    \ifdim\beamer@paperwidth=12.80cm\relax%
+        % Customizations for 4:3 aspect ratio
+    \fi
+}
 
 \mode<all>
