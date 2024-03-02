@@ -1,6 +1,6 @@
 ---
 title:  'PhD Defense'
-subtitle: 'TU Berlin, 26th April 2024'
+subtitle: 'Software Defect Localization Using Explainable Deep Learning'
 author: 
     - 'Tom Ganz'
 theme: 'humboldt'
