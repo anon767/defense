@@ -10,9 +10,9 @@ jobs:
       - uses: docker://pandoc/latex:2.9
         with:
           args: -t revealjs --standalone --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=result.html slides.md
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: "Artifact"
+          name: github-pages
           path: result.html
     # Deploy job
   deploy:
