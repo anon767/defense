@@ -17,6 +17,7 @@ jobs:
           TEXINPUTS: "./templates//:"
 
       - name: Compile PDF with LaTeX Docker
+        uses: docker://texlive/texlive:latest
         with:
           args: pdflatex presentation.tex
         # Note: Adjust the volume and working directory as needed
