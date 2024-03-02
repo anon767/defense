@@ -12,59 +12,76 @@ revealjs-url: lib/revealjs
 mathjaxurl: 'lib/mathjax/'
 ---
 
-# Motivation
+# Introduction
 
-## Why
+## Overview
 
-- Always start with a motivation
-- Never be unmotivated
-- There is no motivation
-- You can cite publications [@Zipser2010]
-- Add extra pauses with `. . . `
+- Introduction to software vulnerabilities and the need for effective localization.
+- Importance of explainable AI in understanding and improving defect localization.
 
-. . . 
+## Objectives
 
-::: {.center .large}
+- To explore the challenges associated with machine learning-based vulnerability detection.
+- To enhance model interpretability, robustness, and context sensitivity for better vulnerability discovery.
 
-**Research Question!**
+# Background
 
-:::
+## Software Vulnerabilities
 
-## How
+- Definition and implications of software vulnerabilities.
+- Current approaches to vulnerability detection and their limitations.
 
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-You can have columns by using divs with styles
-:::
-::: {.column width="70%"}
+## Machine Learning in Software Vulnerability
 
-```
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-You can have columns by using divs with styles
-:::
-::: {.column width="70%"}
-[inception style content]
-:::
+- Transition from traditional methods to machine learning-based approaches.
+- The role of explainable AI (XAI) in enhancing model transparency and trust.
 
-::::::::::::::
+# Methodology
 
+## Neural Vulnerable Code Augmentation
 
-```
+- Techniques to improve data quality and model generalizability.
 
+## Explainability in Vulnerability Discovery Models
 
-:::
-::::::::::::::
+- Integration of XAI methods to improve model interpretability.
+
+## Controlling Confounding Effects
+
+- Use of causal learning techniques to mitigate confounding effects and enhance model robustness.
+
+## Taint Analysis for Patches
+
+- Application of learning-based taint analysis to expand model context and improve detection rates.
+
+# Results
+
+## Improved Model Performance
+
+- Demonstration of enhanced vulnerability detection through novel augmentation techniques and explainability methods.
+- Significant reduction in confounding effects and increased detection rates using taint analysis.
+
+## Practical Implications
+
+- Discussion on the real-world applicability of the proposed solutions in software development and security practices.
 
 # Conclusion
 
-## Results
+## Summary of Contributions
 
-- Everything works perfectly
-- Research Question was answered
-- $x =  \frac{-b \pm \sqrt{b^2-4ac}}{2a}$
+- Recap of the main findings and methodological innovations introduced in the thesis.
 
-## Thank You Slides
+## Future Work
+
+- Potential directions for further research in the field of software vulnerability detection using machine learning and XAI.
+
+## Final Thoughts
+
+- The importance of continuous improvement in security practices to address emerging software vulnerabilities.
+
+# Acknowledgements
+
+- Gratitude expressed to supervisors, colleagues, and family for their support throughout the PhD journey.
 
 # Appendix
 
