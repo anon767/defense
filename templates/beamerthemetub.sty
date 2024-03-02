@@ -11,6 +11,52 @@
 \setbeamertemplate{page in head/foot}[framenumber]
 \setbeamertemplate{page number in head/foot}[framenumber]
 \logo{\includegraphics[height=0.8cm]{images/logo.png}\vspace{220pt}}
-\definecolor{capri}{rgb}{0.1, 0.7, 1.0}
-\usecolortheme[named=capri]{structure}
 
+
+\definecolor{TUred}{HTML}{C50E1F}
+\definecolor{TUgrey}{HTML}{717171}
+\definecolor{TUblack}{HTML}{000000}
+
+
+% Apply color theme
+\mode<presentation>{
+    \usecolortheme[named=TUred]{structure}
+}
+
+% Geometry adjustment
+\geometry{left=0.95cm, right=0.95cm}
+
+% Frametitle customization
+\setbeamercolor{frametitle}{fg=TUred,bg=white}
+\defbeamertemplate*{frametitle}{customized}[1][]{
+    % Empty frametitle definition
+}
+\addtobeamertemplate{frametitle}{%
+    \vspace{0pt}\hspace{0pt}\insertframetitle
+}{}
+
+% Table of content customization
+\defbeamertemplate*{toc}{customized}[1][]{
+    % Empty TOC definition
+}
+\addtobeamertemplate{toc}{%
+    \addtobeamertemplate{section in toc}{TUBlayout}{\leftskip=0.5em\large\inserttocsection\par}
+}{}
+
+% Block customization
+\setbeamercolor{block title}{fg=TUred,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+
+% Itemize customization
+\setbeamertemplate{items}[square]
+\setbeamercolor{itemize item}{fg=TUred}
+\setbeamertemplate{itemize item}[triangle]
+
+% Apply outer and inner themes if they are defined
+% Note: Replace 'TUBlayout' with actual theme names if available.
+% If 'TUBlayout' is a custom layout you've created, ensure its definitions
+% are included in this file or separately imported.
+%\useoutertheme{TUBlayout}
+%\useinnertheme{TUBlayout}
+
+\mode<all>
