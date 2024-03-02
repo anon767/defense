@@ -9,19 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Generate LaTeX from Markdown
+      # Modified step to directly generate PDF from Markdown
+      - name: Generate PDF from Markdown
         uses: docker://pandoc/latex:2.9
         with:
-          args: --filter pandoc-citeproc --to=beamer --standalone --output=presentation.tex slides.md
-
-      - name: Compile PDF with LaTeX Docker
-        uses: docker://texlive/texlive:latest
-        with:
-          args: pdflatex presentation.tex
-        env:
-          TEXINPUTS: "./templates//:"
-        # Note: Adjust the volume and working directory as needed
-
+          args: --filter pandoc-citeproc --to=beamer --standalone --output=presentation.pdf slides.md
+      
+      # This step uploads the generated PDF as an artifact
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
