@@ -1,10 +1,8 @@
 ---
-title:  'Korpling Example Slides'
-subtitle: 'Some Workshop, April 2019'
+title:  'PhD Defense'
+subtitle: 'TU Berlin, 26th April 2024'
 author: 
-    - 'Author One'
-    - 'Author Two'
-    - 'Author Etc'
+    - 'Tom Ganz'
 theme: 'humboldt'
 center: 'false'
 slideNumber: 'true'
