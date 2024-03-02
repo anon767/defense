@@ -1,16 +1,16 @@
-name: Advanced Usage
+name: Build HTML
 
 on: push
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker://pandoc/latex:2.9
         with:
-          args: -t revealjs -s --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=output/result.html example-slides.md
-      - uses: actions/upload-artifact@v3
+          args: -t revealjs --standalone --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=result.html example-slides.md
+      - uses: actions/upload-artifact@v4
         with:
-          name: output
-          path: output
+          name: "Artifact"
+          path: result.html
