@@ -13,13 +13,13 @@ jobs:
         uses: docker://pandoc/latex:2.9
         with:
           args: --filter pandoc-citeproc --to=beamer --include-in-header=templates/beamer.tex --standalone --output=presentation.tex slides.md
-        env:
-          TEXINPUTS: "./templates//:"
 
       - name: Compile PDF with LaTeX Docker
         uses: docker://texlive/texlive:latest
         with:
           args: pdflatex presentation.tex
+        env:
+          TEXINPUTS: "./templates//:"
         # Note: Adjust the volume and working directory as needed
 
       - name: Upload PDF as Artifact
