@@ -1,0 +1,28 @@
+name: Build PDF
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Generate LaTeX from Markdown
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: --filter pandoc-citeproc --to=beamer --include-in-header=templates/beamer.tex --standalone --output=presentation.tex slides.md
+
+      - name: Compile PDF with LaTeX Docker
+        uses: docker://texlive/texlive:latest
+        with:
+          args: pdflatex presentation.tex
+        # Note: Adjust the volume and working directory as needed
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: presentation.pdf
+
