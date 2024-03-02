@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: docker://pandoc/latex:2.9
         with:
-          args: -t revealjs -s --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=output/result.pdf example-slides.md
+          args: -t revealjs -s --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=output/result.html example-slides.md
       - uses: actions/upload-artifact@v3
         with:
           name: output
