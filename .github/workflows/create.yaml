@@ -1,0 +1,16 @@
+name: Advanced Usage
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker://pandoc/latex:2.9
+        with:
+          args: -t revealjs -s --mathjax --filter pandoc-citeproc --template=templates/default.revealjs --output=output/result.pdf example-slides.md
+      - uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: output
