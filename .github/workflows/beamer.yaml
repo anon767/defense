@@ -14,7 +14,8 @@ jobs:
         uses: docker://pandoc/latex:2.9
         with:
           args: --filter pandoc-citeproc --to=beamer --standalone --output=presentation.pdf slides.md
-      
+        env:
+          TEXINPUTS: "./templates//:"      
       # This step uploads the generated PDF as an artifact
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
